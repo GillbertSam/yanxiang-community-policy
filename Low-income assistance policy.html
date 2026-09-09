@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>低保办理指南</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "Microsoft YaHei", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.8;
+      padding-bottom: 40px;
+    }
+    .header {
+      background: linear-gradient(135deg, #1a73e8, #4a90d9);
+      color: #fff;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .header h1 { font-size: 22px; margin-bottom: 6px; }
+    .header p { font-size: 14px; opacity: 0.9; }
+    .container { max-width: 640px; margin: 0 auto; padding: 16px; }
 
+    /* 基本信息卡片 */
+    .info-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .info-card h2 {
+      font-size: 18px;
+      color: #1a73e8;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e8f0fe;
+    }
+    .info-row {
+      display: flex;
+      padding: 8px 0;
+      font-size: 15px;
+    }
+    .info-label {
+      color: #666;
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    .info-value { color: #333; font-weight: 500; }
+
+    /* 步骤条 */
+    .steps { padding: 0; list-style: none; }
+    .step {
+      display: flex;
+      padding: 14px 0;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 44px;
+      bottom: 0;
+      width: 2px;
+      background: #d0dff0;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: #1a73e8;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-right: 14px;
+    }
+    .step-content h3 { font-size: 16px; margin-bottom: 4px; }
+    .step-content p { font-size: 14px; color: #666; }
+
+    /* 材料清单 */
+    .material-list { list-style: none; }
+    .material-list li {
+      padding: 10px 0;
+      font-size: 15px;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: flex-start;
+    }
+    .material-list li:last-child { border-bottom: none; }
+    .material-list li::before {
+      content: '✓';
+      color: #34a853;
+      font-weight: bold;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    /* 提示框 */
+    .tip-box {
+      background: #fff8e1;
+      border-left: 4px solid #f9a825;
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #5d4037;
+    }
+
+    /* 联系方式 */
+    .contact-box {
+      background: #e8f5e9;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact-box p { font-size: 15px; margin-bottom: 6px; }
+    .contact-box .phone {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .update-time {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1> 最低生活保障（低保）办理指南</h1>
+    <p>XX社区 · 惠民政策服务</p>
+  </div>
+
+  <div class="container">
+
+    <!-- 基本信息 -->
+    <div class="info-card">
+      <h2> 基本信息</h2>
+      <div class="info-row">
+        <span class="info-label">办理条件</span>
+        <span class="info-value">家庭人均收入低于当地低保标准，且财产状况符合规定</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">低保标准</span>
+        <span class="info-value">城镇 XXXX 元/月，农村 XXXX 元/月（请替换为当地标准）</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">办理费用</span>
+        <span class="info-value">免费</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">办理时限</span>
+        <span class="info-value">法定 40 个工作日内办结</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">办理地点</span>
+        <span class="info-value">户籍所在地街道办（乡镇）民政窗口</span>
+      </div>
+    </div>
+
+    <!-- 温馨提示 -->
+    <div class="tip-box">
+       <strong>温馨提示：</strong>低保以家庭为单位申请，共同生活的家庭成员（配偶、未成年子女等）的收入和财产均需如实申报。隐瞒信息将被取消资格。
+    </div>
+
+    <!-- 办理流程 -->
+    <div class="info-card">
+      <h2> 办理流程</h2>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>提交申请</h3>
+            <p>以家庭为单位，向户籍所在地街道办（乡镇）或社区居委会提交书面申请及相关材料</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>受理与核查</h3>
+            <p>街道办在 10 个工作日内完成入户调查、家庭经济状况信息核对</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>民主评议与公示</h3>
+            <p>社区组织居民代表评议，结果在所在社区公示 7 天</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>审批确认</h3>
+            <p>县级民政部门在 10 个工作日内完成审批，符合条件的予以确认</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>资金发放</h3>
+            <p>审批通过后，低保金次月起按月发放至社保卡</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- 所需材料 -->
+    <div class="info-card">
+      <h2> 所需材料</h2>
+      <ul class="material-list">
+        <li>最低生活保障申请书（社区可领取模板）</li>
+        <li>申请人及家庭成员身份证、户口本复印件</li>
+        <li>家庭经济状况申报表</li>
+        <li>家庭经济状况核对授权书（全体家庭成员签字）</li>
+        <li>收入证明（近 6 个月银行流水、工资单等）</li>
+        <li>困难佐证材料（病历/诊断书、残疾证、失业证明等，按实际情况提供）</li>
+      </ul>
+    </div>
+
+    <!-- 注意事项 -->
+    <div class="info-card">
+      <h2>️ 注意事项</h2>
+      <ul class="material-list">
+        <li>家庭成员不能遗漏，漏报视为隐瞒，将不予受理</li>
+        <li>收入须如实申报，包括打零工、养老金、子女赡养费等</li>
+        <li>名下有商品房、家用汽车、大额存款等可能不符合条件</li>
+        <li>低保实行年度复核，家庭经济状况好转需主动报告</li>
+      </ul>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="contact-box">
+      <p> 如有疑问，请咨询</p>
+      <p class="phone">雁翔社区便民服务站</p>
+      <p>电话：029-89536966</p>
+      <p>地址：雁翔路118号雁翔社区党群服务中心</p>
+      <p>工作时间：周一至周五 9:00-12:00 14:00-18:00</p>
+    </div>
+
+    <p class="update-time">最后更新：2026年9月</p>
+
+  </div>
+
+</body>
+</html>
